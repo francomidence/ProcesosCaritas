@@ -1,0 +1,35 @@
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_CASO`(NUMEXP VARCHAR (45),CANTB INT,IDUVIO INT,IDEAT INT,IDMUNI INT,IDREMI INT,IDREC INT,IDCAUSA INT,IDTERA INT,IDPAC INT,IDCOND INT ,IDTRATA INT)
+BEGIN
+insert into caso (numero_expediente,cantidad_beneficiados,id_uviolencia,id_estadoa,id_municipio,id_remision,id_recursos,id_causa,id_terapeuta,id_paciente,id_condicion,id_tratamiento)
+values(NUMEXP,CANTB,IDUVIO,2,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND,IDTRATA);
+END$$
+
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_CASO`(NUMEXP VARCHAR (45),CANTB INT,IDUVIO INT,IDEAT INT,IDMUNI INT,IDREMI INT,IDREC INT,IDCAUSA INT,IDTERA INT,IDPAC INT,IDCOND INT ,IDTRATA INT)
+BEGIN
+UPDATE caso SET numero_expediente=NUMEXP,
+cantidad_beneficiados=CANTB,
+id_uviolencia=IDUVIO,
+id_estadoa=IDEAT,
+id_municipio=IDMUNI,
+id_remision=IDREMI,
+id_recursos=IDREC,
+id_causa=IDCAUSA,
+id_terapeuta=IDTERA,
+id_paciente=IDPAC,
+id_condicion=IDCOND,
+id_tratamiento=IDTRATA
+	WHERE numero_expediente=NUMEXP;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_CASO`(NUMEXP VARCHAR (45))
+BEGIN
+DELETE from caso WHERE numero_expediente=NUMEXP;
+END$$

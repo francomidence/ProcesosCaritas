@@ -1,0 +1,20 @@
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_USUARIO`(user varchar(45))
+BEGIN
+DELETE from Usuario where usuario = USER;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_USUARIO`(user varchar(45),pass varchar(45),rol INT)
+BEGIN
+insert into USUARIO (usuario,contraseña,id_rol) values (user,pass,rol);
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_USUARIO`(USER VARCHAR(45),PASS VARCHAR(45),NUSER VARCHAR(45),ROL INT)
+BEGIN
+update USUARIO set usuario = NUSER, contraseña = PASS, id_rol= ROL where usuario = USER;
+END$$

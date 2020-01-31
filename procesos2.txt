@@ -1,0 +1,63 @@
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_EDUCACION`(EDU varchar(45))
+BEGIN
+insert into educacion (tipo) values (EDU);
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_EDUCACION`(ID int)
+BEGIN
+DELETE from educacion where id_educacion = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_EDUCACION`(ID int, EDU varchar(45))
+BEGIN
+update educacion set id_educacion = ID, tipo = EDU where id_educacion = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_ESTADO_OCUPACION`(ESTADO varchar(45))
+BEGIN
+insert into estado_ocupacion (tipo) values (ESTADO);
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_ESTADO_OCUPACION`(ID int)
+BEGIN
+DELETE from estado_ocupacion where id_estado = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_ESTADO_OCUPACION`(ID int, ESTADO varchar(45))
+BEGIN
+update estado_ocupacion set id_estado = ID, tipo = ESTADO where id_estado = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_MUNICIPIO`(MUNI varchar(45))
+BEGIN
+insert into municipio (nombre) values (MUNI);
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_MUNICIPIO`(ID int)
+BEGIN
+DELETE from municipio where id_municipio = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_MUNICIPIO`(ID int, MUNI varchar(45))
+BEGIN
+update municipio set id_municipio = ID, nombre = MUNI where id_municipio = ID;
+END$$

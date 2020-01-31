@@ -1,0 +1,11 @@
+DELETE FROM caritas.remision WHERE id_remision = 2;
+INSERT INTO caritas.remision (id_remision,juez) VALUES (2,'JP');
+DELETE FROM caritas.remision WHERE id_remision = 3;
+INSERT INTO caritas.remision (id_remision,juez) VALUES (3,'OTROS');
+
+UPDATE caritas.causa_violencia Set Causa = 'Alcoholismo' where id_causa = 3;
+INSERT INTO caritas.causa_violencia (id_causa,causa) VALUES (4,'Otros');
+
+DELETE FROM caritas.estado_civil WHERE id_estadoc = 5;
+
+INSERT INTO caritas.estado_civil (id_estadoc,estado) VALUES (4,'Viudo(a)');

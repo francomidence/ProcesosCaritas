@@ -1,0 +1,85 @@
+
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_TERAPEUTA`(NOMB varchar(45))
+BEGIN
+insert into terapeuta (nombre) values (NOMB);
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_TERAPEUTA`(ID int)
+BEGIN
+DELETE from terapeuta where id_terapeuta = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_TERAPEUTA`(ID INT,NOMB varchar(45))
+BEGIN
+update terapeuta set id_terapeuta = ID, terapeuta = NOMB where id_terapeuta = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_REMISION`(JUEZ varchar(45))
+BEGIN
+insert into remision (juez) values (JUEZ);
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_REMISION`(ID int)
+BEGIN
+DELETE from remision where id_remision = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_REMISION`(ID int, JUEZ varchar(45))
+BEGIN
+update remision set id_remision = ID, juez = JUEZ  where id_remision = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_ESTADO_ATENCION`(ESTADO varchar(45))
+BEGIN
+insert into estado_atencion (estado) values (ESTADO);
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_ESTADO_ATENCION`(ID int)
+BEGIN
+DELETE from estado_atencion where id_estadoa = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_REMISION`(ID int, ESTADO varchar(45))
+BEGIN
+update estado_atencion set id_estadoa = ID, estado = ESTADO  where id_estadoa = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_RECURSOS_MUNICIPALES`(RECURSO varchar(45))
+BEGIN
+insert into recursos_municipales (tipo) values (RECURSO);
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `DELETE_RECURSOS_MUNICIPALES`(ID int)
+BEGIN
+DELETE from  recursos_municipales where id_recursos = ID;
+END$$
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_RECURSOS_MUNICIPALES`(ID int, RECURSO varchar(45))
+BEGIN
+update recursos_municipales set id_recursos = ID, tipo = RECURSO where id_recursos = ID;
+END$$
